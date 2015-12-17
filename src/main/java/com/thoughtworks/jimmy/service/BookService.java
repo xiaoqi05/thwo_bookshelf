@@ -12,6 +12,11 @@ public interface BookService {
 
     void edit(Book book);
 
+    void delete(String isbn);
+
+
+
+
 
 
 }
