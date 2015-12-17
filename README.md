@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # thwo-bookshelf
 
 ## Workshop
@@ -46,3 +47,6 @@ implement `create new book` functionality.
 
 
 
+=======
+# thwo_bookshelf
+>>>>>>> f31635639c8f8710fe4b535f8b5d12c20eb7608b
