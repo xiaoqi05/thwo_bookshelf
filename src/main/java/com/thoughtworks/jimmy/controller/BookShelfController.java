@@ -45,6 +45,20 @@ public class BookShelfController {
     @RequestMapping(value = "book", method = RequestMethod.POST)
     public String commitEditBook(Book book) {
         bookService.edit(book);
-        return "redirect:/book/"+book.getIsbn();
+        return "redirect:/book/" + book.getIsbn();
+    }
+
+
+    @RequestMapping(value = "book/new", method = RequestMethod.GET)
+    public ModelAndView createNewBook() {
+        ModelMap modelMap = new ModelMap();
+        modelMap.put("book", new Book());
+        return new ModelAndView("newBook", modelMap);
+    }
+
+    @RequestMapping(value = "book/createNewOne", method = RequestMethod.POST)
+    public String createNewBook(Book book) {
+        bookService.edit(book);
+        return "redirect:/book/" + book.getIsbn();
     }
 }
