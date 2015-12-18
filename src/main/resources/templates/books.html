@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head lang="en">
     <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+    <script th:inline="javascript">
+
+        function del(ele) {
+            //alert(ele);
+            ele.innerHTML = "";
+            //todo 不会传值
+
+             // window.location.href = "<%basePath%>book/deleteBook?isbn=9780201485677" ;
+        }
+
+    </script>
 </head>
 
 <body>
@@ -26,7 +38,10 @@
                 <td th:text="${book.price}">price</td>
                 <td><a th:href="${ '/book/' + book.isbn}">View</a></td>
                 <td><a th:href="${'/book/edit/' + book.isbn}">Edit</a></td>
-                <td><a th:href="${'/book/deleteBook/' + book.isbn}">Delete</a></td>
+                <td><input type="button" onclick="del(this.parentNode.parentNode)" value="Delete"/>
+                </td>
+
+
             </tr>
         </table>
 
