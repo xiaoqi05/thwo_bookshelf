@@ -59,12 +59,15 @@ public class BookShelfController {
     @RequestMapping(value = "book/createNewOne", method = RequestMethod.POST)
     public String createNewBook(Book book) {
         bookService.createBook(book);
+
         return "redirect:/book/" + book.getIsbn();
     }
 
     @RequestMapping(value = "book/deleteBook", method = RequestMethod.GET)
     public String deleteBook(@PathVariable String isbn) {
         bookService.delete(isbn);
+        System.out.print(isbn);
         return "redirect:/" ;
     }
+
 }
