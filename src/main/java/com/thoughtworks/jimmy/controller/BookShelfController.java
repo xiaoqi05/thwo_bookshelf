@@ -62,9 +62,10 @@ public class BookShelfController {
         return "redirect:/book/" + book.getIsbn();
     }
 
-    @RequestMapping(value = "book/deleteBook", method = RequestMethod.GET)
+    @RequestMapping(value = "book/deleteBook/{isbn}", method = RequestMethod.GET)
     public String deleteBook(@PathVariable String isbn) {
         bookService.delete(isbn);
-        return "redirect:/" ;
+        return "redirect:/";
     }
+
 }
